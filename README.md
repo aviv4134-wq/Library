@@ -61,9 +61,9 @@ TABLE: members
 column name | data type     |  Constraints                                |description
      id          INT         AUTO_INCREMENT PRIMARY KEY,  
      name      VARCHAR(50)   NOT NULL,
-     email     TEXT          NOT NULL   UNIQUE,
-     is_active  BOOLEAN      NOT NULL                                      if false the member cant take a book  
-     borrows_total  INT      AUTO_INCREMENT NOT NULL,                      every time the one of members borrow this counting by one 
+     email     VARCHAR(255)  NOT NULL   UNIQUE,
+     is_active  BOOLEAN      NOT NULL,                                  #if false the member cant take a book  
+     borrows_total  INT      NOT NULL,              #every time the one of members borrow this counting by one 
 
 
 SYSTEM RULES:
@@ -132,7 +132,7 @@ and return the result of the request to the client
 
 HOW TO RUN:
 install venv
-than do this in command line: pip install -r requirements.txt
+then do this in command line: pip install -r requirements.txt
 go to main.py file use this in command line: uvicorn main:app --reload
 then your server is up 
 go to url http://127.0.0.1:8000/docs
