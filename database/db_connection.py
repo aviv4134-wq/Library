@@ -1,7 +1,7 @@
 import mysql.connector
 
 
-def connection_get():
+def get_connection():
     conn =  mysql.connector.connect(
         host = 'localhost',
         user = 'root',
@@ -10,7 +10,6 @@ def connection_get():
         database = 'library_db'
     )
     return conn
-
 
     
 
