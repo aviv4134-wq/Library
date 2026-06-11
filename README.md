@@ -135,5 +135,5 @@ install venv
 than do this in command line: pip install -r requirements.txt
 go to main.py file use this in command line: uvicorn main:app --reload
 then your server is up 
-go to url server / docs 
+go to url http://127.0.0.1:8000/docs
 and do requests
