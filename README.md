@@ -47,10 +47,10 @@ TABLE: books
 
 column name | data type     |  Constraints                                       |description
      id          INT         AUTO_INCREMENT PRIMARY KEY  
-     title     VARCHAR(50)   NOT NULL
-     author    VARCHAR(50)   NOT NULL
+     title     VARCHAR(50)   NOT NULL,
+     author    VARCHAR(50)   NOT NULL,
      genre     ENUM(Fiction, Non-Fiction, Science, History, Other)  NOT NULL,  #only allowed (Fiction, Non-Fiction,Science History  Other)
-     available_is  BOOLEAN    NOT NULL  ,                                        #if false the book is borrowed
+     available_is  BOOLEAN    NOT NULL  DEFAULT TRUE,                                    #if false the book is borrowed
      id_member_by_borrowed    INT      DEFAULT NULL                              #the number id of member that borrowed the book 
 
 
