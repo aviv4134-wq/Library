@@ -21,16 +21,16 @@ def create_table() -> str:
                     title        VARCHAR(50)   NOT NULL,
                     author       VARCHAR(50)   NOT NULL,
                     genre        ENUM('Fiction','Non-Fiction','Science','History','Other')  NOT NULL,  
-                    is_available             BOOLEAN    NOT NULL,                                        
-                    id_member_by_borrowed    INT        DEFAULT NULL  
+                    is_available             BOOLEAN    NOT NULL  DEFAULT TRUE,                                        
+                    borrowed_by_member_id   INT        DEFAULT NULL  
                             )'''
             query_create_members_table = '''
-                CREATE TABLE IF NOT EXISTS members(
+            CREATE TABLE IF NOT EXISTS members(
                 id          INT         AUTO_INCREMENT PRIMARY KEY,  
                 name        VARCHAR(50)   NOT NULL,
                 email       VARCHAR(255)     NOT NULL   UNIQUE,
-                is_active   BOOLEAN      NOT NULL,                                        
-                borrows_total  INT       NOT NULL                    
+                is_active   BOOLEAN      NOT NULL   DEFAULT TRUE,                                     
+                total_borrows  INT       NOT NULL   DEFAULT 0               
                                 )'''                
             curs.execute(query_create_books_table)
             curs.execute(query_create_members_table)

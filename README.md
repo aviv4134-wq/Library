@@ -50,8 +50,8 @@ column name | data type     |  Constraints                                      
      title     VARCHAR(50)   NOT NULL,
      author    VARCHAR(50)   NOT NULL,
      genre     ENUM(Fiction, Non-Fiction, Science, History, Other)  NOT NULL,  #only allowed (Fiction, Non-Fiction,Science History  Other)
-     available_is  BOOLEAN    NOT NULL  DEFAULT TRUE,                                    #if false the book is borrowed
-     id_member_by_borrowed    INT      DEFAULT NULL                              #the number id of member that borrowed the book 
+     is_available  BOOLEAN    NOT NULL  DEFAULT TRUE,                                    #if false the book is borrowed
+     borrowed_by_member_id    INT      DEFAULT NULL                              #the number id of member that borrowed the book 
 
 
 
@@ -62,8 +62,8 @@ column name | data type     |  Constraints                                |descr
      id          INT         AUTO_INCREMENT PRIMARY KEY,  
      name      VARCHAR(50)   NOT NULL,
      email     VARCHAR(255)  NOT NULL   UNIQUE,
-     is_active  BOOLEAN      NOT NULL,                                  #if false the member cant take a book  
-     borrows_total  INT      NOT NULL,              #every time the one of members borrow this counting by one 
+     is_active  BOOLEAN      NOT NULL  DEFAULT TRUE,                           #if false the member cant take a book  
+     total_borrows  INT      NOT NULL  DEFAULT 0            #every time the one of members borrow this counting by one 
 
 
 SYSTEM RULES:
